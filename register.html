@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WLEE | Login</title>
+    <style>
+        body {
+            background-color: #6d7973;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .square {
+            width: 400px;
+            height: 450px;
+            background-color: white;
+        }
+        
+        .container {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        img {
+            width: 80px;
+            height: auto;
+            display: block;
+            margin-inline: auto;
+            object-fit: cover;
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 16px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: #6d7973;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        
+        input[name="username"] {
+            display: block;
+            width: 310px;
+            height: 30px;
+            border-radius: 6px;
+            background-color: #d3d3d3;
+            border-color: transparent;
+            color: black;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 17px;
+            margin-bottom: 3px;
+            margin-inline: auto;
+        }
+        
+        input[name="password"] {
+            display: block;
+            width: 310px;
+            height: 30px;
+            border-radius: 6px;
+            background-color: #d3d3d3;
+            border-color: transparent;
+            color: black;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 17px;
+            margin-bottom: 3px;
+            margin-inline: auto;
+        }
+        
+        input[name="create"] {
+            display: block;
+            width: 318px;
+            height: 33px;
+            border-radius: 6px;
+            background-color: #6d7973;
+            border-color: transparent;
+            color: white;
+            font-size: 17px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-inline: auto;
+            margin-block: 17px;
+        }
+        
+        input[name="create"]:hover {
+            background-color: transparent;
+            border: 2px solid #6d7973;
+            color: #6d7973;
+        }
+        
+        .corner {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        
+        input[name="register"] {
+            background-color: transparent;
+            border-color: transparent;
+            font-size: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #6d7973;
+        }
+        
+        input[name="loginn"] {
+            background-color: #6d7973;
+            border-color: transparent;
+            font-size: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+        }
+        
+        input[name="loginn"]:hover {
+            background-color: white;
+            color: #6d7973;
+        }
+        
+        input[name="email"] {
+            display: block;
+            width: 310px;
+            height: 30px;
+            border-radius: 6px;
+            background-color: #d3d3d3;
+            border-color: transparent;
+            color: black;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 17px;
+            margin-bottom: 3px;
+            margin-inline: auto;
+        }
+        
+        select[name="rule"] {
+            display: block;
+            width: 318px;
+            height: 37px;
+            border-radius: 6px;
+            background-color: #d3d3d3;
+            border-color: transparent;
+            color: black;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-block: 17px;
+            margin-inline: auto;
+        }
+        
+        input[name="code"] {
+            display: none;
+            width: 310px;
+            height: 30px;
+            border-radius: 6px;
+            background-color: #d3d3d3;
+            border-color: transparent;
+            color: black;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-block: 17px;
+            margin-inline: auto;
+        }
+        
+        input[name="repassword"] {
+            display: block;
+            width: 310px;
+            height: 30px;
+            border-radius: 6px;
+            background-color: #d3d3d3;
+            border-color: transparent;
+            color: black;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 17px;
+            margin-bottom: 3px;
+            margin-inline: auto;
+        }
+        
+        label[name="label"] {
+            display: none;
+            font-size: 11px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="square">
+        <div class="corner">
+            <input type="submit" name="register" id="register" value="register">
+            <form action="login.html"><input type="submit" name="loginn" id="loginn" value="login"></form>
+        </div>
+        <div class="container">
+            <h1> create your account</h1>
+            <input type="text" name="email" id="email" placeholder="email . ." oninput="email()">
+            <label name="label" id="l1">this email already registered</label>
+            <select name="rule" id="rule" onchange="opsi()">
+                <option value="" disabled selected>rule . .</option>
+                <option value="staff">staff</option>
+                <option value="client">client</option>
+                <option value="visitor">visitor</option>
+            </select>
+            <input type="text" name="code" id="code" placeholder="working code . .">
+            <input type="text" name="username" id="username" placeholder="username . ." oninput="user()">
+            <label name="label" id="l2">this username not available again</label>
+            <input type="password" name="password" id="password" placeholder="password . ." oninput="passw()" required>
+            <label name="label" id="l3">this password already used by another account</label>
+            <input type="password" name="repassword" id="repassword" placeholder="confirm password . ." required oninput="valid()">
+            <label name="label" id="l4">incorrect confirm password</label>
+            <input type="submit" name="create" id="create" value="create" onclick="create()">
+        </div>
+    </div>
+    <script>
+        function create() {
+            var email = document.getElementById('email').value;
+            var rule = document.getElementById('rule').value;
+            var username = document.getElementById('username').value;
+            var pass = document.getElementById('password').value;
+            var repass = document.getElementById('repassword').value;
+            if (email !== '' && rule !== '' && username !== '' && pass !== '' && repass !== '') {
+                if ((email == 'dafarialfathri@gmail.com' || email == 'jakartalovestory04@gmail.com') || (username == 'jakarta love story' || username == 'dafari al fathri') || (pass == 'smartfren15avl' || pass == '085157755043') || (repass !== pass)) {
+                    alert('please register rightly');
+                    window.location.href = 'register.html';
+                } else if ((email !== 'dafarialfathri@gmail.com' || email !== 'jakartalovestory04@gmail.com') && (username !== 'jakarta love story' || username !== 'dafari al fathri') && (pass !== 'smartfren15avl' || pass !== '085157755043') && (repass == pass)) {
+                    alert('success to create your account');
+                    window.location.href = 'login.html';
+                }
+            } else {
+                alert('please register rightly');
+                window.location.href = 'register.html';
+            }
+        }
+
+        function opsi() {
+            var rule = document.getElementById('rule').value;
+            if (rule == 'staff') {
+                document.getElementById('code').style.display = 'block';
+            }
+            if (rule !== 'staff') {
+                document.getElementById('code').style.display = 'none';
+            }
+        }
+
+        function email() {
+            var email = document.getElementById('email').value;
+            if (email !== '') {
+                if (email == 'dafarialfathri@gmail.com' || email == 'jakartalovestory04@gmail.com') {
+                    document.getElementById('l1').style.display = 'block';
+                } else if (email !== 'dafarialfathri@gmail.com' || email !== 'jakartalovestory04@gmail.com') {
+                    document.getElementById('l1').style.display = 'none';
+                }
+            } else {
+                document.getElementById('l1').style.display = 'none';
+            }
+        }
+
+        function user() {
+            var username = document.getElementById('username').value;
+            if (username !== '') {
+                if (username == 'jakarta love story' || username == 'dafari al fathri') {
+                    document.getElementById('l2').style.display = 'block';
+                } else if (username !== 'jakarta love story' || username !== 'dafari al fathri') {
+                    document.getElementById('l2').style.display = 'none';
+                }
+            } else {
+                document.getElementById('l2').style.display = 'none';
+            }
+        }
+
+        function passw() {
+            var pass = document.getElementById('password').value;
+            if (pass !== '') {
+                if (pass == 'smartfren15avl' || pass == '085157755043') {
+                    document.getElementById('l3').style.display = 'block';
+                } else if (pass !== 'smartfren15avl' || pass !== '085157755043') {
+                    document.getElementById('l3').style.display = 'none';
+                }
+            } else {
+                document.getElementById('l3').style.display = 'none';
+            }
+        }
+
+        function valid() {
+            var repass = document.getElementById('repassword').value;
+            var pass = document.getElementById('password').value;
+            if (repass !== '') {
+                if (repass !== pass) {
+                    document.getElementById('l4').style.display = 'block';
+                } else if (repass == pass) {
+                    document.getElementById('l4').style.display = 'none';
+                }
+            } else {
+                document.getElementById('l4').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

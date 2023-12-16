@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WLEE | Verify</title>
+    <style>
+        body {
+            background-color: #6d7973;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+        }
+        
+        .square {
+            background-color: white;
+            width: 400px;
+            height: 450px;
+        }
+        
+        .container {
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        
+        h1 {
+            font-size: 16px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: #6d7973;
+            margin-top: 35px;
+            margin-bottom: 20px;
+        }
+        
+        img {
+            display: block;
+            width: 60px;
+            height: auto;
+            margin-inline: auto;
+            margin-top: 45px;
+            margin-bottom: 12px;
+            animation: membal 2s ease infinite;
+        }
+        
+        @keyframes membal {
+            0%,
+            30%,
+            60%,
+            90%,
+            100% {
+                transform: translateY(0);
+            }
+            15% {
+                transform: translateY(-15px);
+            }
+            45% {
+                transform: translateY(-35px);
+            }
+            75% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        h2 {
+            font-size: 12px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: black;
+            display: none;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        
+        input[name="code"] {
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            background-color: #d3d3d3;
+            border-color: transparent;
+            margin-inline: 7px;
+            color: black;
+            font-size: 16px;
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        
+        input[name="submit"] {
+            width: 318px;
+            height: 33px;
+            border-radius: 6px;
+            background-color: #6d7973;
+            border-color: transparent;
+            color: white;
+            font-size: 17px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-inline: auto;
+            margin-top: 17px;
+            margin-bottom: 4px;
+        }
+        
+        input[name="submit"]:hover {
+            background-color: transparent;
+            border: 2px solid #6d7973;
+            color: #6d7973;
+        }
+        
+        h3 {
+            font-size: 12px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: black;
+            display: block;
+        }
+        
+        .mundur {
+            font-size: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #6d7973;
+            margin-block: 10px;
+            animation: none;
+        }
+        
+        @keyframes jj {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="square">
+        <div class="container">
+            <h1> the verify code success to sent <br> check your email & entry the code here</h1>
+            <img class="inbox" id="inbox" src="inbox.png" alt="inbox">
+            <div id="mundur" class="mundur"><span id="pewaktu"></span></div>
+            <h2 id="h2">not yet received code? <a href="verif.html">request</a> </h2>
+            <input type="text" name="code" id="c1">
+            <input type="text" name="code" id="c2">
+            <input type="text" name="code" id="c3">
+            <input type="text" name="code" id="c4">
+            <input type="text" name="code" id="c5">
+            <input type="text" name="code" id="c6">
+            <input type="submit" name="submit" id="submit" value="submit" onclick="submit()">
+            <h3>want to verify with other email? <a href="forgot.html">click here</a></h3>
+        </div>
+    </div>
+    <script>
+        function submit() {
+            var c1 = document.getElementById('c1').value;
+            var c2 = document.getElementById('c2').value;
+            var c3 = document.getElementById('c3').value;
+            var c4 = document.getElementById('c4').value;
+            var c5 = document.getElementById('c5').value;
+            var c6 = document.getElementById('c6').value;
+            if (c1 !== '' && c2 !== '' && c3 !== '' && c4 !== '' && c5 !== '' && c6 !== '') {
+                window.location.href = 'home.html';
+            } else {
+                alert('your verification failed, try again entry the code');
+            }
+        }
+
+        function hitungmundur() {
+            var countDownDate = new Date().getTime() + 60000;
+            var x = setInterval(function() {
+                    var now = new Date().getTime();
+                    var interval = countDownDate - now;
+                    var min = Math.floor(interval / 60000);
+                    var sec = Math.floor(interval / 1000);
+                    document.getElementById("pewaktu").innerHTML = min + ":" + sec;
+                    if (interval < 11000) {
+                        document.getElementById("mundur").style.color = "#ff0000";
+                        document.getElementById('mundur').style.animation = 'jj 1s infinite';
+                    }
+                    if (interval < 0) {
+                        clearInterval(x);
+                        document.getElementById('mundur').style.animation = 'none';
+                        document.getElementById("pewaktu").innerHTML = 0 + ":" + 0;
+                        document.getElementById("h2").style.display = "block";
+                    }
+                },
+                1000);
+        }
+        hitungmundur();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WLEE | Landing Page</title>
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        
+        .square1 {
+            background-color: #6d7973;
+            height: 100vh;
+            width: 500px;
+        }
+        
+        .icon {
+            width: 200px;
+            height: auto;
+            display: flex;
+            margin-inline: auto;
+            margin-block: auto;
+        }
+        
+        .container1 {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 100px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            letter-spacing: 35px;
+            margin-bottom: -20px;
+            margin-top: 35vh;
+        }
+        
+        p {
+            font-size: 16px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+            padding-inline: 60px;
+        }
+        
+        .corner {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+        
+        input[name="corner"] {
+            background-color: white;
+            width: 90px;
+            height: 35px;
+            border-radius: 20px;
+            margin-inline: 4px;
+            border: 1px solid #6d7973;
+            color: #6d7973;
+            font-size: 14px;
+            font-weight: 100;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        input[name="corner"]:hover {
+            font-size: 15px;
+            border: 2px solid #6d7973;
+        }
+        
+        input[name=login] {
+            background-color: #6d7973;
+            width: 90px;
+            height: 35px;
+            border-radius: 20px;
+            margin-inline: 4px;
+            border-color: transparent;
+            color: white;
+            font-size: 14px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        input[name="login"]:hover {
+            width: 91px;
+            height: 36px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="square1">
+        <div class="container1">
+            <h1>WLEE</h1>
+            <p>this website using for monitoring your house keep clean and perform your house to other people. WLEE help you to management your house to reduce any garbage or anything will be messy. WLEE can detect with raspberry camera and sensor. So, reach
+                your Clean House with WLEE </p>
+        </div>
+    </div>
+    <img class="icon" alt="icon" src="logo besar.png">
+    <div class="corner">
+        <form action="feature.html"><input type="submit" name="corner" id="feature" value="feature"></form>
+        <form action="contactus.html"><input type="submit" name="corner" id="contactus" value="contact us"></form>
+        <form action="login.html"><input type="submit" name="login" id="login" value="login"></form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WLEE | Login</title>
+    <style>
+        body {
+            background-color: #6d7973;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .square {
+            width: 400px;
+            height: 450px;
+            background-color: white;
+        }
+        
+        .container {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        img {
+            width: 80px;
+            height: auto;
+            display: block;
+            margin-inline: auto;
+            object-fit: cover;
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 16px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: #6d7973;
+            margin-block: 20px;
+        }
+        
+        input[name="username"] {
+            display: block;
+            width: 310px;
+            height: 30px;
+            border-radius: 6px;
+            background-color: #d3d3d3;
+            border-color: transparent;
+            color: black;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 17px;
+            margin-bottom: 3px;
+            margin-inline: auto;
+        }
+        
+        input[name="password"] {
+            display: block;
+            width: 310px;
+            height: 30px;
+            border-radius: 6px;
+            background-color: #d3d3d3;
+            border-color: transparent;
+            color: black;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 17px;
+            margin-bottom: 3px;
+            margin-inline: auto;
+        }
+        
+        input[name="login"] {
+            display: block;
+            width: 318px;
+            height: 33px;
+            border-radius: 6px;
+            background-color: #6d7973;
+            border-color: transparent;
+            color: white;
+            font-size: 17px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-inline: auto;
+            margin-top: 17px;
+            margin-bottom: 25px;
+        }
+        
+        input[name="login"]:hover {
+            background-color: transparent;
+            border: 2px solid #6d7973;
+            color: #6d7973;
+        }
+        
+        .corner {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        
+        input[name="loginn"] {
+            background-color: transparent;
+            border-color: transparent;
+            font-size: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #6d7973;
+        }
+        
+        input[name="register"] {
+            background-color: #6d7973;
+            border-color: transparent;
+            font-size: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+        }
+        
+        input[name="register"]:hover {
+            background-color: white;
+            color: #6d7973;
+        }
+        
+        h2 {
+            font-size: 12px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: black;
+            display: none;
+        }
+        
+        label[name="us"] {
+            display: none;
+            font-size: 11px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: red;
+        }
+        
+        label[name="pw"] {
+            display: none;
+            font-size: 11px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="square">
+        <div class="corner">
+            <form action="register.html"><input type="submit" name="register" id="register" value="register"></form>
+            <input type="submit" name="loginn" id="loginn" value="login">
+        </div>
+        <div class="container">
+            <img class="logo" alt="logo" src="logo.png">
+            <h1> sign in to your account</h1>
+            <input type="text" name="username" id="username" placeholder="username or email . ." oninput="user()">
+            <label name="us" id="us">username or email not yet registered</label>
+            <input type="password" name="password" id="password" placeholder="password . ." oninput="pass()">
+            <label name="pw" id="pw">password code has invalid</label>
+            <input type="submit" name="login" id="login" value="login" onclick="login()">
+            <h2 id="h2">forgot your password or email? <a href="forgot.html">click here</a> </h2>
+        </div>
+    </div>
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            if ((username == 'dafari al fathri' || username == 'jakarta love story' || username == 'dafarialfathri@gmail.com' || username == 'jakartalovestory04@gmail.com') && (password == 'smartfren15avl' || password == '085157755043')) {
+                alert('login success, welcome to WLEE');
+                window.location.href = 'home.html';
+            } else {
+                alert('login failed, please try again');
+                document.getElementById('h2').style.display = 'block';
+            }
+        }
+
+        function user() {
+            var username = document.getElementById('username').value;
+            if (username !== '') {
+                if (username == 'dafari al fathri' || username == 'jakarta love story' || username == 'dafarialfathri@gmail.com' || username == 'jakartalovestory04@gmail.com') {
+                    document.getElementById('us').style.display = 'none';
+                } else if (username !== 'dafari al fathri' || username !== 'jakarta love story' || username !== 'dafarialfathri@gmail.com' || username !== 'jakartalovestory04@gmail.com') {
+                    document.getElementById('us').style.display = 'block';
+                }
+            } else {
+                document.getElementById('us').style.display = 'none';
+            }
+        }
+
+        function pass() {
+            var password = document.getElementById('password').value;
+            if (password !== '') {
+                if (password == 'smartfren15avl' || password == '085157755043') {
+                    document.getElementById('pw').style.display = 'none';
+                } else if (password !== 'smartfren15avl' || password !== '085157755043') {
+                    document.getElementById('pw').style.display = 'block';
+                }
+            } else {
+                document.getElementById('pw').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

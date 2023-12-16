@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WLEE | Forgot</title>
+    <style>
+        body {
+            background-color: #6d7973;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .square {
+            background-color: white;
+            width: 400px;
+            height: 450px;
+        }
+        
+        .container {
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        
+        h1 {
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #6d7973;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 16px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: #6d7973;
+            margin-block: 20px;
+        }
+        
+        input[name="email"] {
+            display: block;
+            width: 310px;
+            height: 30px;
+            border-radius: 6px;
+            background-color: #d3d3d3;
+            border-color: transparent;
+            color: black;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 17px;
+            margin-bottom: 5px;
+            margin-inline: auto;
+        }
+        
+        label[name="email"] {
+            display: none;
+            font-size: 12px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: red;
+            margin-bottom: 3px;
+        }
+        
+        input[name="submit"] {
+            display: block;
+            width: 318px;
+            height: 33px;
+            border-radius: 6px;
+            background-color: #6d7973;
+            border-color: transparent;
+            color: white;
+            font-size: 17px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-inline: auto;
+            margin-top: 17px;
+        }
+        
+        input[name="submit"]:hover {
+            background-color: transparent;
+            border: 2px solid #6d7973;
+            color: #6d7973;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="square">
+        <div class="container">
+            <h1>Verify Account</h1>
+            <h2>please entry your email adress</h2>
+            <input type="text" name="email" id="email" placeholder="email adress . ." oninput="email()">
+            <label name="email" id="label">this email not yet registered</label>
+            <input type="submit" name="submit" id="submit" value="submit" onclick="submit()">
+        </div>
+    </div>
+    <script>
+        function email() {
+            var email = document.getElementById('email').value;
+            if (email !== '') {
+                if (email == 'dafarialfathri@gmail.com' || email == 'jakartalovestory04@gmail.com') {
+                    document.getElementById('label').style.display = 'none';
+                } else if (email !== 'dafarialfathri@gmail.com' || email !== 'jakartalovestory04@gmail.com') {
+                    document.getElementById('label').style.display = 'block';
+                }
+            } else {
+                document.getElementById('label').style.display = 'none';
+            }
+        }
+
+        function submit() {
+            var email = document.getElementById('email').value;
+            if (email !== '') {
+                if (email == 'dafarialfathri@gmail.com' || email == 'jakartalovestory04@gmail.com') {
+                    window.location.href = 'verif.html';
+                } else if (email !== 'dafarialfathri@gmail.com' || email !== 'jakartalovestory04@gmail.com') {
+                    alert('please input email adress rightly');
+                }
+            } else {
+                alert('please input email adress rightly');
+            }
+        }
+    </script>
+</body>
+
+</html>
